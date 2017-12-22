@@ -3,7 +3,7 @@ use 5.008001;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 
 
@@ -26,9 +26,10 @@ App::cpanexec - Execute application within local environment.
 
 =head1 DESCRIPTION
 
-The program to execute command within the local environment. Perl package
-managers like L<Carton> or L<cpm> installs the dependencies into C<local> folder
-near the C<cpanfile>.
+The program to execute command within the local environment.
+
+Perl package managers like L<Carton> or L<cpm> installs the dependencies
+into C<local> folder near the C<cpanfile>.
 
 The library L<local::lib> prepare appropriate environment for execute scripts
 or executable program within such local environment. However it is necessary to
@@ -37,8 +38,9 @@ be deconfigured.
 
 This program C<cpane> require command line passed to it as arguments. The
 command line may be script installed in local folder or generic executable may
-be with arguments. It execute passed command line within prepared by
-C<local::lib> local environment and does not modify current environment.
+be with arguments. It execute passed command line within configured to current
+dir local environment and does not modify current environment. Folder C<local>
+must be exists in current dir.
 
 =head1 DEPENDENCIES
 
@@ -53,8 +55,6 @@ L<Carton>
 L<cpm>
 
 L<perlrocks>
-
-L<cpanm>
 
 L<cpanfile>
 
