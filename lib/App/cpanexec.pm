@@ -26,29 +26,34 @@ App::cpanexec - Execute application within local environment.
 
 =head1 DESCRIPTION
 
-The program to execute command within the local environment.
+The program C<cpane> executes command within the local environment.
 
-Perl package managers like L<Carton> or L<cpm> installs the dependencies
-into C<local> folder near the C<cpanfile>.
+Perl package managers like L<Carton> or L<cpm> install the dependencies into
+C<local> folder near the C<cpanfile>.
 
-The library L<local::lib> prepare appropriate environment for execute scripts
-or executable program within such local environment. However it is necessary to
-do some passes to configure such environment and configured environment need to
-be deconfigured.
+The library L<local::lib> prepares appropriate environment for executing script
+or executable program within such local environment. However it is necessary
+to do some passes to configure such environment and configured environment
+need to be deconfigured.
 
-This program C<cpane> require command line passed to it as arguments. The
-command line may be script installed in local folder or generic executable may
-be with arguments. It execute passed command line within configured to current
-dir local environment and does not modify current environment. Folder C<local>
-must be exists in current dir.
+This program C<cpane> requires command line passed as its arguments. The command
+line may be script installed in local folder or generic executable may be with
+arguments. It runs passed command line in the local environment configured for
+the current dir and does not modify current environment. Folder C<local> must
+be exists in current dir.
+
+The C<cpane> may be used with Carton or cpm or without it. It works like
+C<exec> subcommand of ruby L<bundler|http://bundler.io/man/bundle-exec.1.html>
+or perl L<Carton> or like C<run> subcommand of node
+L<npm|https://docs.npmjs.com/cli/run-script>. It configures runtime
+environments accordings to the generaly accepted perl workflows provided by
+L<local::lib>.
 
 =head1 DEPENDENCIES
 
 L<local::lib>
 
 =head1 SEE ALSO
-
-L<local::lib>
 
 L<Carton>
 
