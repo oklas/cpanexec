@@ -33,8 +33,6 @@
       },
       "develop" : {
          "requires" : {
-            "local::lib" : "0",
-            "Capture::Tiny" : "0",
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion::Fast" : "0.04",
             "Test::PAUSE::Permissions" : "0.04",
@@ -65,7 +63,7 @@
          "web" : "https://github.com/oklas/cpanexec"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_authority" : "cpan:OKLAS",
    "x_serialization_backend" : "JSON::PP version 2.27300_01"
 }

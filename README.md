@@ -12,9 +12,10 @@ App::cpanexec - Execute application within local environment.
 
 # DESCRIPTION
 
-The program to execute command within the local environment. Perl package
-managers like [Carton](https://metacpan.org/pod/Carton) or [cpm](https://metacpan.org/pod/cpm) installs the dependencies into `local` folder
-near the `cpanfile`.
+The program to execute command within the local environment.
+
+Perl package managers like [Carton](https://metacpan.org/pod/Carton) or [cpm](https://metacpan.org/pod/cpm) installs the dependencies
+into `local` folder near the `cpanfile`.
 
 The library [local::lib](https://metacpan.org/pod/local::lib) prepare appropriate environment for execute scripts
 or executable program within such local environment. However it is necessary to
@@ -23,8 +24,9 @@ be deconfigured.
 
 This program `cpane` require command line passed to it as arguments. The
 command line may be script installed in local folder or generic executable may
-be with arguments. It execute passed command line within prepared by
-`local::lib` local environment and does not modify current environment.
+be with arguments. It execute passed command line within configured to current
+dir local environment and does not modify current environment. Folder `local`
+must be exists in current dir.
 
 # DEPENDENCIES
 
@@ -39,8 +41,6 @@ be with arguments. It execute passed command line within prepared by
 [cpm](https://metacpan.org/pod/cpm)
 
 [perlrocks](https://metacpan.org/pod/perlrocks)
-
-[cpanm](https://metacpan.org/pod/cpanm)
 
 [cpanfile](https://metacpan.org/pod/cpanfile)
 
