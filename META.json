@@ -1,12 +1,12 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Execute application within local environment.",
    "author" : [
       "Serguei Okladnikov <oklaspec@gmail.com>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150010",
    "license" : [
-      "MIT"
+      "mit"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/oklas/cpanexec/issues"
+      },
+      "homepage" : "https://github.com/oklas/cpanexec",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/oklas/cpanexec.git",
+         "web" : "https://github.com/oklas/cpanexec"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:OKLAS",
    "x_serialization_backend" : "JSON::PP version 2.27300_01"
