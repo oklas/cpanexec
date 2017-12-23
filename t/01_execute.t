@@ -5,46 +5,60 @@ use Capture::Tiny qw(capture);
 use File::Temp qw/ tempdir /;
 use Cwd;
 
-sub run {
-  my (@args) = @_;
+use subs qw/test_run/;
+my $cwd = Cwd::cwd();
+
+
+sub test_run {
+  my ($test_name, $status, $search, @args) = @_;
   my($stdout, $stderr, $exit) = capture {
-    system(@args);
+    system "$cwd/script/cpane", @args;
   };
 
-  # warn "$stderr\n" if $exit;
-  die "execution is not succeeded, code:$exit" if $exit;
+  my $msg = '';
 
-  return $stdout;
+  if( ($status eq 'ok') != (0 == $exit) ) {
+    $msg = "execution status ($exit) is wrong\n";
+  }
+
+  my $result = $status eq 'ok' ? $stdout : $stderr;
+  if( -1 == index($result, $search) ) {
+    $msg .= "search string: '$search' not found\n";
+  }
+
+  if( $msg ) {
+    $msg .= "stdout: $stdout\n" if $stdout;
+    $msg .= "stderr: $stderr\n" if $stderr;
+  }
+
+  ok !$msg, $test_name;
 } 
+
 
 my $result;
 my $tmpdir = tempdir( CLEANUP => 1 );
 
-my $cwd = Cwd::cwd();
 
 chdir $tmpdir;
 
 mkdir "$tmpdir";
 
-$result = eval{
-  run "$cwd/script/cpane" => 'echo must exit with error';
-  1;
-};
-ok $result != 1, 'folder "./local" is required';
+test_run 'folder "./local" is required',
+  error => "There is no folder 'local' in current dir",
+  'echo echo must exit with error';
 
 mkdir "$tmpdir/local";
 
-$result = eval{
-  run "$cwd/script/cpane";
-  1;
-};
-ok $result != 1, 'script or command is required';
+test_run 'script or command is required',
+  error => "Script or execuble may be with args required";
 
-$result = run "$cwd/script/cpane" => 'echo $PERL5LIB';
-ok -1 != index($result, "$tmpdir/local/lib"), 'libs configured';
+test_run 'env is configured to load libraries',
+  ok => "$tmpdir/local/lib",
+  'echo $PERL5LIB';
 
-$result = run "$cwd/script/cpane" => 'echo $PATH';
-ok -1 != index($result, "$tmpdir/local/bin"), 'bins configured';
+test_run 'env is configured to execute binary',
+  ok => "$tmpdir/local/bin",
+  'echo $PATH';
 
 chdir $cwd;
 
