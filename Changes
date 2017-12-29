@@ -2,11 +2,16 @@ Revision history for Perl extension App-cpanexec
 
 {{$NEXT}}
 
+0.04 2017-12-29T13:48:37Z
+
+    - run current perl (instead of system perl) in tests #1
+
 0.03 2017-12-23T12:29:11Z
 
     - refactoring tests to show more details on errors
 
 0.02 2017-12-22T18:27:04Z
+
     - add testing
 
 0.01 2017-12-22T17:06:49Z
