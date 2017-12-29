@@ -42,11 +42,13 @@
       },
       "runtime" : {
          "requires" : {
+            "local::lib" : "0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : "0",
             "Test::More" : "0.98"
          }
       }
