@@ -2,6 +2,10 @@ Revision history for Perl extension App-cpanexec
 
 {{$NEXT}}
 
+0.05 2017-12-29T14:42:48Z
+
+    - add Capture::Tiny deps
+
 0.04 2017-12-29T13:48:37Z
 
     - run current perl (instead of system perl) in tests #1

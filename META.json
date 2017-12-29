@@ -47,8 +47,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98",
-            "Capture::Tiny" : "0"
+            "Test::More" : "0.98"
          }
       }
    },
@@ -64,7 +63,7 @@
          "web" : "https://github.com/oklas/cpanexec"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_authority" : "cpan:OKLAS",
    "x_serialization_backend" : "JSON::PP version 2.27300_01"
 }
