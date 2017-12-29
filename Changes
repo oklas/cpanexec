@@ -2,6 +2,10 @@ Revision history for Perl extension App-cpanexec
 
 {{$NEXT}}
 
+0.07 2017-12-29T22:12:55Z
+
+    - repeat release again #2
+
 0.06 2017-12-29T19:16:23Z
 
     - add local::lib to deps
