@@ -42,7 +42,8 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.008001"
+            "perl" : "5.008001",
+            "local::lib" : "0"
          }
       },
       "test" : {
