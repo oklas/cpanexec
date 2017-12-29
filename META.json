@@ -42,8 +42,7 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.008001",
-            "local::lib" : "0"
+            "perl" : "5.008001"
          }
       },
       "test" : {
@@ -64,7 +63,7 @@
          "web" : "https://github.com/oklas/cpanexec"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_authority" : "cpan:OKLAS",
    "x_serialization_backend" : "JSON::PP version 2.27300_01"
 }
