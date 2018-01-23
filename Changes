@@ -2,6 +2,10 @@ Revision history for Perl extension App-cpanexec
 
 {{$NEXT}}
 
+0.09 2018-01-23T17:20:43Z
+
+    - redirect program return value
+
 0.08 2017-12-29T23:09:01Z
 
     - add deps
